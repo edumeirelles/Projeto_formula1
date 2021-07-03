@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Blue - HTML, CSS, JS, Python e SQL</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <div class="bloco single">
+        <h1>{{registro.nome}}</h1>
+        <img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" height="400" width="400" />
+        <h3>Vitórias: {{registro.vitorias}}</h3>
+        <h3>Pole-positions: {{registro.poles}}</h3>
+        <h3>Corridas Disputadas: {{registro.gp_disputados}}</h3>
+        <h3>Pontos: {{registro.pontos}}</h3>
+        <h3>Podiums: {{registro.podiums}}</h3>
+        <h3>Títulos: {{registro.campeonatos}}</h3>
+    </div>
+</body>
+</html>

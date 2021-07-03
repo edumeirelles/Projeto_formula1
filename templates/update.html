@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Blue - HTML, CSS, JS, Python e SQL</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+    {% include 'header.html' %}
+    
+    {% if not sucesso %}
+
+    <div class="bloco bloco_form">
+        <h2>Editar Registros</h2>
+        
+        <form action="" method="POST">
+
+            <div class="formulario">
+                <div class="form_coluna">
+                    <label for="nome">Nome do piloto: </label>
+                    <label for="vitorias">Número de vitórias do piloto: </label>
+                    <label for="poles">Número de pole-positions do piloto: </label>
+                    <label for="gp_disputados">Número de GPs disputados: </label>
+                    <label for="pontos">Número de pontos do piloto: </label>
+                    <label for="podiums">Número de podiums do piloto: </label>
+                    <label for="campeonatos">Número de Títulos do piloto: </label>
+                    <label for="imagem_url">URL da imagem: </label>
+                    
+                </div>
+                <div class="form_coluna">
+                    <input type="text" name="nome" id="nome" value="{{ registro.nome }}" />
+                    <input type="text" name="vitorias" id="vitorias" value="{{ registro.vitorias }}"/>
+                    <input type="text" name="poles" id="poles" value="{{ registro.poles }}"/>
+                    <input type="text" name="gp_disputados" id="gp_disputados" value="{{ registro.gp_disputados }}"/>
+                    <input type="text" name="pontos" id="pontos" value="{{ registro.pontos }}"/>
+                    <input type="text" name="podiums" id="podiums" value="{{ registro.podiums }}"/>
+                    <input type="text" name="campeonatos" id="campeonatos"  value="{{ registro.campeonatos }}"/>
+                    <input type="text" name="imagem_url" id="imagem_url" value="{{ registro.imagem_url }}"/>
+                </div>
+            </div> 
+            <div class="erro_create" id="erro_create">
+                <h3>Preencha todos os campos!</h3>
+            </div>
+            <input type="submit" value="Enviar Dados" class="botao" id="enviar_dados">           
+        </form>
+
+        {% else %}
+
+        <div class="bloco sucesso">
+            <p>Registro ediatdo com sucesso!</p>
+        </div>
+
+        <div class="bloco">
+            <a href="/read/{{ registro.id }}" class="botao">Visualizar esse registro</a>
+        </div>
+
+        {% endif %}
+    </div>
+    <script src="/static/script.js" type="text/javascript"></script>
+</body>
+</html>
