@@ -87,10 +87,13 @@ def read_id(registro_id):
 @app.route('/create', methods=('GET','POST'))
 def create():
     id_atribuido = None
-
+    erro = "Preencha todos os campos"
     if request.method == 'POST':
         form = request.form
-        
+        if not form['nome'] or not form['vitorias'] or not form['poles'] or not form['gp_disputados'] or not form['pontos'] or not form['podiums'] or not form['campeonatos'] or not form['imagem_url']:
+            
+            return render_template('erro.html', id_atribuido=id_atribuido, erro=erro)
+
         registro = Formula1(form['nome'], form['vitorias'], form['poles'], form['gp_disputados'], form['pontos'], form['podiums'], form['campeonatos'], form['imagem_url'])
         
         registro.save()
