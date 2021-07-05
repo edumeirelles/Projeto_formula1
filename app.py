@@ -110,11 +110,14 @@ def create():
 def update(registro_id):
 
     sucesso = False
-
+    erro = "Preencha todos os campos"
     registro = Formula1.read_single(registro_id)
 
     if request.method == 'POST':
         form = request.form
+        if not form['nome'] or not form['vitorias'] or not form['poles'] or not form['gp_disputados'] or not form['pontos'] or not form['podiums'] or not form['campeonatos'] or not form['imagem_url']:
+
+            return render_template('erro.html', registro=registro, erro=erro)
 
         registro.update(form['nome'], form['vitorias'], form['poles'], form['gp_disputados'], form['pontos'], form['podiums'], form['campeonatos'], form['imagem_url'])
 

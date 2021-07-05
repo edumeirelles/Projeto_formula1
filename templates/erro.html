@@ -11,11 +11,21 @@
 <body>
     {% include 'header.html' %}
     
+
+    {% if not registro %}
     <div class="bloco bloco_form">
         <h2>Criar Registros</h2>
+    </div>
+    {% else %}
+
+
+    <div class="bloco bloco_form">
+        <h2>Editar Registro</h2>
+    </div>
+    {% endif %}
         
         {% if not id_atribuido %}
-
+    <div>
         <form action="" method="POST">
 
             <div class="formulario">
@@ -30,6 +40,7 @@
                     <label for="imagem_url">URL da imagem: </label>
                     
                 </div>
+                {% if not registro %}
                 <div class="form_coluna">
                     <input type="text" name="nome" id="nome" />
                     <input type="text" name="vitorias" id="vitorias" />
@@ -40,11 +51,26 @@
                     <input type="text" name="campeonatos" id="campeonatos" />
                     <input type="text" name="imagem_url" id="imagem_url"/>
                 </div>
+                {% else %}
+                <div class="form_coluna">
+                    <input type="text" name="nome" id="nome" value="{{ registro.nome }}" />
+                    <input type="text" name="vitorias" id="vitorias" value="{{ registro.vitorias }}"/>
+                    <input type="text" name="poles" id="poles" value="{{ registro.poles }}"/>
+                    <input type="text" name="gp_disputados" id="gp_disputados" value="{{ registro.gp_disputados }}"/>
+                    <input type="text" name="pontos" id="pontos" value="{{ registro.pontos }}"/>
+                    <input type="text" name="podiums" id="podiums" value="{{ registro.podiums }}"/>
+                    <input type="text" name="campeonatos" id="campeonatos"  value="{{ registro.campeonatos }}"/>
+                    <input type="text" name="imagem_url" id="imagem_url" value="{{ registro.imagem_url }}"/>
+                </div>
+                {% endif %}
             </div> 
-            <div>
+            <div class="bloco">
                 <h3>{{ erro }}</h3>
             </div>
-            <input type="submit" value="Enviar Dados" class="botao" id="enviar_dados">           
+            <div class="bloco">
+                <input type="submit" value="Enviar Dados" class="botao" id="enviar_dados">   
+            </div>
+                    
         </form>
 
         {% else %}
