@@ -67,6 +67,11 @@ class Formula1(db.Model):
 
         self.save()
 
+    def delete(self):
+        
+        db.session.delete(self)
+        db.session.commit()
+
             
 @app.route('/')
 def index():
@@ -116,6 +121,26 @@ def update(registro_id):
         sucesso = True
     
     return render_template('update.html', registro=registro, sucesso=sucesso)
+
+@app.route('/delete/<registro_id>')
+def delete(registro_id):
+
+    registro = Formula1.read_single(registro_id)
+    return render_template("delete.html", registro=registro)
+
+@app.route('/delete/<registro_id>/confirmed')
+def delete_confirmed(registro_id):
+    sucesso = False
+
+    registro = Formula1.read_single(registro_id)
+
+    if registro:
+
+        registro.delete()
+
+        sucesso = True
+    
+    return render_template("delete.html", registro=registro, sucesso=sucesso)
 
 
 if (__name__ == '__main__'):

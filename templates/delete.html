@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Blue - HTML, CSS, JS, Python e SQL</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+    {% include 'header.html' %}
+    
+    {% if sucesso %} 
+
+        <div class="bloco sucesso">
+            <p>Registro removido  com sucesso!</p>
+        </div>
+
+        <div class="bloco">
+            <a href="/read" class="botao">Visualizar todos os registros</a>
+        </div>
+
+    {% elif registro %}
+
+        <div class="bloco bloco_form">
+            <h2>Remover Registro</h2>
+        </div>  
+
+        <div class="bloco">
+            <p>
+                <h3>Tem certeza que deseja remover o registro {{ registro.nome }}?</h3>
+                <br/>
+                <a href="/delete/{{ registro.id }}/confirmed" class="botao">Remover</a>
+                <a href="/read" class="botao">Cancelar</a>
+            </p>
+        </div>
+
+
+    {% else %}
+        <div class="bloco sucesso">
+            <p>Nenhum registro encontrado!</p>
+        </div>
+
+        <div class="bloco">
+            <a href="/read" class="botao">Visualizar todos os registros</a>
+        </div>
+       
+    {% endif %}
+    
+    
+</body>
+</html>

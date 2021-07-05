@@ -23,6 +23,7 @@
                 <td>Pole-positions</td>
                 <td>Pontos</td>
                 <td>Podiums</td>
+                <td>Títulos</td>
                 <td>Imagem</td>
                 <td>Ações</td>
             </tr>
@@ -36,10 +37,11 @@
                 <td>{{ registro["poles"] }}</td>
                 <td>{{ registro["pontos"] }}</td>
                 <td>{{ registro["podiums"] }}</td>
+                <td>{{ registro["campeonatos"] }}</td>
                 <td><img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" height="200" /></td>
                 <td><a href="/read/{{ registro['id'] }}" class="botao">Visualizar</a>
                     <a href="/update/{{ registro['id'] }}" class="botao">Editar</a>
-                    <a href="/edit/{{ registro['id'] }}" class="botao">Remover</a>
+                    <a href="/delete/{{ registro['id'] }}" class="botao">Remover</a>
                 </td>
                 
 
