@@ -10,15 +10,41 @@
 
 <body>
     {% include 'header.html' %}
-    <div class="bloco single">
+    <div class="bloco">
         <h1>{{registro.nome}}</h1>
-        <img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" height="400" width="400" />
-        <h3>Vitórias: {{registro.vitorias}}</h3>
-        <h3>Pole-positions: {{registro.poles}}</h3>
-        <h3>Corridas Disputadas: {{registro.gp_disputados}}</h3>
-        <h3>Pontos: {{registro.pontos}}</h3>
-        <h3>Podiums: {{registro.podiums}}</h3>
-        <h3>Títulos: {{registro.campeonatos}}</h3>
+    </div>
+    
+    <div class="bloco single">
+        <div>
+            
+            <img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" height="400" width="400" />
+        </div>
+        <div class="tabela_single">
+            <table>
+                <tr>
+                    <td>Vitórias:</td><td>{{registro.vitorias}}</td>
+                </tr>
+                <tr>
+                    <td>Pole-positions:</td><td>{{registro.poles}}</td>
+                <tr>
+                    <td>Corridas Disputadas:</td><td>{{registro.gp_disputados}}</td>
+                </tr>
+                <tr>
+                    <td>Pontos:</td><td>{{registro.pontos}} </td>
+                </tr>
+                <tr>
+                    <td>Podiums:</td><td>{{registro.podiums}}</td>
+                </tr>
+                <tr>
+                    <td>Títulos:</td><td>{{registro.campeonatos}}</td>
+                </tr>           
+            </table>
+        </div>
+             
+    </div>
+    <div class="bloco bio">
+        <h2>Biografia</h2>
+        <p>{{ registro.bio }}</p>
     </div>
 </body>
 </html>

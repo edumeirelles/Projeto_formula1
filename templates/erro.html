@@ -11,20 +11,21 @@
 <body>
     {% include 'header.html' %}
     
-
     {% if not registro %}
-    <div class="bloco bloco_form">
-        <h2>Criar Registros</h2>
-    </div>
+
+        <div class="bloco bloco_form">
+            <h2>Criar Registros</h2>
+        </div>
+
     {% else %}
 
+        <div class="bloco bloco_form">
+            <h2>Editar Registro</h2>
+        </div>
 
-    <div class="bloco bloco_form">
-        <h2>Editar Registro</h2>
-    </div>
     {% endif %}
         
-        {% if not id_atribuido %}
+    {% if not id_atribuido %}
     <div>
         <form action="" method="POST">
 
@@ -37,6 +38,7 @@
                     <label for="pontos">Número de pontos do piloto: </label>
                     <label for="podiums">Número de podiums do piloto: </label>
                     <label for="campeonatos">Número de Títulos do piloto: </label>
+                    <label for="bio">Biografia: </label>
                     <label for="imagem_url">URL da imagem: </label>
                     
                 </div>
@@ -49,6 +51,7 @@
                     <input type="text" name="pontos" id="pontos" />
                     <input type="text" name="podiums" id="podiums" />
                     <input type="text" name="campeonatos" id="campeonatos" />
+                    <input type="text" name="bio" id="bio" />
                     <input type="text" name="imagem_url" id="imagem_url"/>
                 </div>
                 {% else %}
@@ -60,6 +63,7 @@
                     <input type="text" name="pontos" id="pontos" value="{{ registro.pontos }}"/>
                     <input type="text" name="podiums" id="podiums" value="{{ registro.podiums }}"/>
                     <input type="text" name="campeonatos" id="campeonatos"  value="{{ registro.campeonatos }}"/>
+                    <input type="text" name="bio" id="bio"  value="{{ registro.bio }}"/>
                     <input type="text" name="imagem_url" id="imagem_url" value="{{ registro.imagem_url }}"/>
                 </div>
                 {% endif %}

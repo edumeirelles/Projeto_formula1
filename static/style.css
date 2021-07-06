@@ -19,10 +19,12 @@ body{
 }
 .single{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: top;
     text-align: left;
+    margin-left: 25%;
+    margin-right: 25%;
     
 }
 
@@ -85,7 +87,6 @@ body{
 .form_coluna input{
     margin: 10px;
     width: 500px;
-
 }
 
 label{
@@ -98,4 +99,19 @@ label{
     border-radius: 4px;
     color: #155724;
     margin: 0 50px;
+}
+
+.tabela_single tr td{
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+  
+}
+
+.bio{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: justify;
 }
