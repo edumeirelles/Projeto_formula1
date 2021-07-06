@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 body{
-    background: #eeeeee;
+    background: #222222;
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 20px 0;
@@ -9,13 +9,14 @@ body{
 
 .header{
     padding-top: 20px;
-    background: #FFFFFF;
+    background: #444444;
 }
 
 .bloco{
     display: flex;
     justify-content: center;
     text-align: center;
+    color: seashell;
 }
 .single{
     display: flex;
@@ -27,7 +28,6 @@ body{
     margin-right: 25%;
     
 }
-
 .botao{
     background-color: #3359ec;
     border: none;
@@ -56,7 +56,8 @@ body{
 }
 
 .tabela tr:nth-child(even) td{
-    background-color: white;
+    background-color:#444444;
+    color: seashell;
 }
 
 .tabela td{
@@ -100,18 +101,37 @@ label{
     color: #155724;
     margin: 0 50px;
 }
-
 .tabela_single tr td{
-    border: black;
-    border-width: 1px;
-    border-style: solid;
-  
+    width: 250px;
+    height: 25px;
+    font-size: 20px; 
+    padding: 5px;
 }
+
+
+.tabela_single tr:nth-child(even) td{
+    background-color: rgb(93, 100, 107);
+    color: white;
+     
+    
+}
+.tabela_single tr:nth-child(odd) td{
+    background-color: rgb(216, 216, 216);
+    color: black;
+    
+    
+}
+
+.tabela_single td:nth-child(even) {
+    text-align: right;
+}
+
 
 .bio{
     display: flex;
     flex-direction: column;
     margin-left: 25%;
     margin-right: 25%;
-    text-align: justify;
+    text-align:justify;
 }
+
