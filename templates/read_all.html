@@ -38,10 +38,13 @@
                 <td>{{ registro["pontos"] }}</td>
                 <td>{{ registro["podiums"] }}</td>
                 <td>{{ registro["campeonatos"] }}</td>
-                <td><img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" height="200" /></td>
-                <td><a href="/read/{{ registro['id'] }}" class="botao">Visualizar</a>
-                    <a href="/update/{{ registro['id'] }}" class="botao">Editar</a>
-                    <a href="/delete/{{ registro['id'] }}" class="botao">Remover</a>
+                <td><a href="/read/{{ registro['id'] }}"><img class="imagem_piloto" src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}"  /></a></td>
+                <td>
+                    <div class="botoes">
+                        <a href="/read/{{ registro['id'] }}" class="botao">Visualizar</a>
+                        <a href="/update/{{ registro['id'] }}" class="botao">Editar</a>
+                        <a href="/delete/{{ registro['id'] }}" class="botao">Remover</a>
+                    </div>
                 </td>
                 
 

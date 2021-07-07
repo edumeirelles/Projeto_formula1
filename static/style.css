@@ -8,10 +8,35 @@ body{
 }
 
 .header{
-    padding-top: 20px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     background: #444444;
+    background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2017/01/17/1074737/a61774687df4142a54d3aad45d4dde8e-1000.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
 }
 
+.logof1{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: seashell;
+    align-items: center;
+    margin-left: 50px;
+    position: relative;
+    top: -70px
+    
+}
+.logof1 img{
+    width: 200px;
+    height: 50px;
+}
+
+.logof1 h1{
+    padding: 20px;
+}
 .bloco{
     display: flex;
     justify-content: center;
@@ -29,7 +54,7 @@ body{
     
 }
 .botao{
-    background-color: #3359ec;
+    background-color: #ff2800;
     border: none;
     border-radius: 10px;
     color: white;
@@ -40,32 +65,36 @@ body{
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    width: 130px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.796);
 }
 
 .botao:hover{
-    background-color: #5673ee;
+    background-color: #7a0000;
     transition: 0.25s;
+    transform: scale(1.1);
 }
+
 
 .tabela{
     border: 1px solid #adadad;
     border-spacing: 0;
-    margin: 0 50px 20px;
     width: 100%;
+    margin: 0 50px 20px;
 }
+
+
 
 .tabela tr:nth-child(even) td{
     background-color:#444444;
     color: seashell;
 }
 
-.tabela td{
-    padding: 10px;
-}
+
 
 .tabela_header td{
     font-weight: bold;
+    padding: 10px;
 }
 
 .bloco_form{
@@ -111,21 +140,17 @@ label{
 
 .tabela_single tr:nth-child(even) td{
     background-color: rgb(93, 100, 107);
-    color: white;
-     
-    
+    color: white;    
 }
+
 .tabela_single tr:nth-child(odd) td{
     background-color: rgb(216, 216, 216);
     color: black;
-    
-    
 }
 
 .tabela_single td:nth-child(even) {
     text-align: right;
 }
-
 
 .bio{
     display: flex;
@@ -135,3 +160,40 @@ label{
     text-align:justify;
 }
 
+.imagem_piloto{
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.796);
+    height: 200px;
+}
+
+.imagem_piloto:hover{
+    transition: 0.3s;
+    transform: scale(1.2);
+}
+
+.botoes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    text-align: center;
+    color: seashell; 
+}
+
+#botoes_header{
+    margin-right: 50px;
+    position: relative;
+    bottom: -100px;
+}
+
+@media (max-width:1440px){
+    .tabela td{
+        font-size: 12px;
+    }
+    .botao{
+        width: 100px;
+        font-size: 12px;
+        padding: 15px;
+    }
+    .imagem_piloto{
+        height: 175px;
+    }
+}
