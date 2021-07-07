@@ -178,7 +178,7 @@ label{
     color: seashell; 
 }
 
-#botoes_header{
+.botoes_header{
     margin-right: 50px;
     position: relative;
     bottom: -100px;
