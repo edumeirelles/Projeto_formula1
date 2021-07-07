@@ -27,8 +27,8 @@ body{
     margin-left: 50px;
     position: relative;
     top: -70px
-    
 }
+
 .logof1 img{
     width: 200px;
     height: 50px;
@@ -37,6 +37,7 @@ body{
 .logof1 h1{
     padding: 20px;
 }
+
 .bloco{
     display: flex;
     justify-content: center;
@@ -50,9 +51,9 @@ body{
     align-items: top;
     text-align: left;
     margin-left: 25%;
-    margin-right: 25%;
-    
+    margin-right: 25%;    
 }
+
 .botao{
     background-color: #ff2800;
     border: none;
@@ -75,7 +76,6 @@ body{
     transform: scale(1.1);
 }
 
-
 .tabela{
     border: 1px solid #adadad;
     border-spacing: 0;
@@ -83,14 +83,10 @@ body{
     margin: 0 50px 20px;
 }
 
-
-
 .tabela tr:nth-child(even) td{
     background-color:#444444;
     color: seashell;
 }
-
-
 
 .tabela_header td{
     font-weight: bold;
@@ -101,6 +97,7 @@ body{
     display: flex;
     flex-direction: column;
 }
+
 .formulario{
     display: flex;
     flex-direction: row;
@@ -136,7 +133,6 @@ label{
     font-size: 20px; 
     padding: 5px;
 }
-
 
 .tabela_single tr:nth-child(even) td{
     background-color: rgb(93, 100, 107);
