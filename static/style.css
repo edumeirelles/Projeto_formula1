@@ -93,32 +93,37 @@ body{
     padding: 10px;
 }
 
-.bloco_form{
-    display: flex;
-    flex-direction: column;
-}
+
 
 .formulario{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.form_coluna{
-    display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    text-align: left;   
+    
+    
 }
 
-.form_coluna input{
-    margin: 10px;
+.item_form input, textarea{
     width: 500px;
+    padding: 0px;
+    
 }
-
-label{
+.item_form label{
     padding: 10px;
 }
+
+
+.item_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+
+
+
+
 
 .sucesso{
     background-color: #d4edda;
@@ -155,6 +160,7 @@ label{
     margin-right: 25%;
     text-align:justify;
 }
+
 
 .imagem_piloto{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.796);
