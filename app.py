@@ -1,7 +1,6 @@
-from logging import error
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.utils import validate_arguments
+
 
 app = Flask(__name__)
 

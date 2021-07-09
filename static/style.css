@@ -4,18 +4,17 @@ body{
     background: #222222;
     font-family: "Montserrat", sans-serif;
     margin: 0;
-    padding: 20px 0;
+    padding: 0;
 }
 
 .header{
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 20% 0 20% 0;
     background: #444444;
     background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2017/01/17/1074737/a61774687df4142a54d3aad45d4dde8e-1000.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
+    
 }
 
 .logof1{
@@ -25,17 +24,26 @@ body{
     color: seashell;
     align-items: center;
     margin-left: 50px;
-    position: relative;
-    top: -70px
+    position: absolute;
+    top: 0%;      
+    
 }
 
 .logof1 img{
-    width: 200px;
-    height: 50px;
+    width: 20%;
+    height: 20%;
 }
 
 .logof1 h1{
     padding: 20px;
+}
+
+
+.botoes_header{
+    margin-right: 50px;
+    position: absolute;
+    bottom: 25%;
+    right: 0%;
 }
 
 .bloco{
@@ -48,7 +56,7 @@ body{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    align-items: top;
+    align-items: center;
     text-align: left;
     margin-left: 25%;
     margin-right: 25%;    
@@ -93,13 +101,9 @@ body{
     padding: 10px;
 }
 
-
-
 .formulario{
     display: flex;
     flex-direction: column;
-    
-    
 }
 
 .item_form input, textarea{
@@ -111,19 +115,12 @@ body{
     padding: 10px;
 }
 
-
 .item_form{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
 }
-
-
-
-
-
-
 
 .sucesso{
     background-color: #d4edda;
@@ -161,7 +158,6 @@ body{
     text-align:justify;
 }
 
-
 .imagem_piloto{
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.796);
     height: 200px;
@@ -180,11 +176,7 @@ body{
     color: seashell; 
 }
 
-.botoes_header{
-    margin-right: 50px;
-    position: relative;
-    bottom: -100px;
-}
+
 
 @media (max-width:1440px){
     .tabela td{
@@ -197,5 +189,15 @@ body{
     }
     .imagem_piloto{
         height: 175px;
+    }
+    .single img{
+       height: 300px;
+       width: 300px;
+    }
+    .tabela_single tr td{
+        font-size: 16px;
+    }
+    .botoes_header{
+        bottom: 47%; 
     }
 }
