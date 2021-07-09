@@ -27,9 +27,7 @@
                 <td>Imagem</td>
                 <td>Ações</td>
             </tr>
-
             {% for registro in registros %}
-
             <tr>
                 <td>{{ registro["id"] }}</td>
                 <td>{{ registro["nome"] }}</td>
@@ -46,10 +44,7 @@
                         <a href="/delete/{{ registro['id'] }}" class="botao">Remover</a>
                     </div>
                 </td>
-                
-
             </tr>
-
             {% endfor %}
         </table>
     </div>

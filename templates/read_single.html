@@ -16,31 +16,19 @@
     
     <div class="bloco single">
         <div>
-            
             <img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" height="400" width="400" />
         </div>
         <div class="tabela_single">
             <table>
-                <tr>
-                    <td>Vitórias:</td><td>{{registro.vitorias}}</td>
-                </tr>
-                <tr>
-                    <td>Pole-positions:</td><td>{{registro.poles}}</td>
-                <tr>
-                    <td>Corridas Disputadas:</td><td>{{registro.gp_disputados}}</td>
-                </tr>
-                <tr>
-                    <td>Pontos:</td><td>{{registro.pontos}} </td>
-                </tr>
-                <tr>
-                    <td>Podiums:</td><td>{{registro.podiums}}</td>
-                </tr>
-                <tr>
-                    <td>Títulos:</td><td>{{registro.campeonatos}}</td>
-                </tr>           
+                {% for i in tabela %}
+                    {% for k,v in i.items() %}
+                        <tr>
+                            <td>{{v}}:</td><td>{{registro[k]}}</td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
             </table>
-        </div>
-             
+        </div> 
     </div>
     <div class="bloco bio">
         <h2>Biografia</h2>

@@ -20,7 +20,7 @@
     {% else %}
 
         <div class="bloco">
-            <h2>Editar Registro</h2>
+            <h2>Editar Registro {{registro.nome}}</h2>
         </div>
 
     {% endif %}
@@ -28,123 +28,39 @@
     {% if not id_atribuido %}
 
     <div class="bloco">
+        <h3>{{ erro }}</h3>
+    </div>   
+
+    <div class="bloco">
         <form action="" method="POST">
             <div class="formulario">
-                <div class="item_form">
-                    <div>
-                        <label for="nome">Nome do piloto: </label>
-                    </div>
-                    <div>
-                        {% if not registro %}
-                        <input type="text" name="nome" id="nome" />
-                        {% else %}
-                        <input type="text" name="nome" id="nome" value="{{ registro.nome }}" />
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="vitorias">Número de vitórias do piloto: </label>
-                    </div>
-                    <div>
-                        {% if not registro %}
-                        <input type="text" name="vitorias" id="vitorias" />
-                        {% else %}
-                        <input type="text" name="vitorias" id="vitorias" value="{{ registro.vitorias }}"/>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="poles">Número de pole-positions do piloto: </label>
-                    </div>
-                    <div>
-                        {% if not registro %}
-                        <input type="text" name="poles" id="poles" />
-                        {% else %}
-                        <input type="text" name="poles" id="poles" value="{{ registro.poles }}"/>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="gp_disputados">Número de GPs disputados: </label>
-                    </div>
-                    <div>
-                        {% if not registro %}
-                        <input type="text" name="gp_disputados" id="gp_disputados" />
-                        {% else %}
-                        <input type="text" name="gp_disputados" id="gp_disputados" value="{{ registro.gp_disputados }}"/>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="pontos">Número de pontos do piloto: </label>
-                    </div>
-                    <div>
-                        {% if not registro %}
-                        <input type="text" name="pontos" id="pontos" />
-                        {% else %}
-                        <input type="text" name="pontos" id="pontos" value="{{ registro.pontos }}"/>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="podiums">Número de podiums do piloto: </label>
-                    </div>
-                    <div>
-                        {% if not registro %}
-                        <input type="text" name="podiums" id="podiums" />
-                        {% else %}
-                        <input type="text" name="podiums" id="podiums" value="{{ registro.podiums }}"/>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="campeonatos">Número de Títulos do piloto: </label> 
-                    </div>
-                    <div>
-                        {% if not registro %}
-                        <input type="text" name="campeonatos" id="campeonatos" />
-                        {% else %}
-                        <input type="text" name="campeonatos" id="campeonatos"  value="{{ registro.campeonatos }}"/>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="bio">Biografia: </label>
-                    </div>
-                    <div>
-                        {% if not registro %}
-                        <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
-                        {% else %}
-                        <textarea name="bio" id="bio" cols="30" rows="10" >{{registro.bio}}</textarea>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="imagem_url">URL da imagem: </label> 
-                    </div> 
-                    <div>
-                        {% if not registro %}
-                        <input type="text" name="imagem_url" id="imagem_url"/>
-                        {% else %}
-                        <input type="text" name="imagem_url" id="imagem_url" value="{{ registro.imagem_url }}"/>
-                        {% endif %}
-                    </div>  
-                </div>           
+                {% for i in labels %}
+                    {% for k,v in i.items() %}
+                        <div class="item_form">
+                            <div>
+                                <label for="{{k}}">{{v}}</label>
+                            </div>
+                            <div>
+                                {% if not registro %}
+                                    {% if k != 'bio' %}
+                                        <input type="text" name="{{k}}" id="{{k}}"/>
+                                    {% else %}
+                                        <textarea name="{{k}}" id="{{k}}" cols="30" rows="10"></textarea>
+                                    {% endif %}
+                                {% else %}
+                                    {% if k != 'bio' %}
+                                        <input type="text" name="{{k}}" id="{{k}}" value="{{registro[k]}}"/>
+                                    {% else %}
+                                        <textarea name="{{k}}" id="{{k}}" cols="30" rows="10">{{registro[k]}}</textarea>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>   
+                    {% endfor %}
+                {% endfor %}        
             </div> 
            
-            <div class="bloco">
-                <h3>{{ erro }}</h3>
-            </div>   
-
-            <input type="submit" value="Enviar Dados" class="botao bloco" style="width: 170px;"/>    
+            <input type="submit" value="Enviar Dados" class="botao" style="width: 170px;"/>    
         </form>
        
         {% else %}
@@ -158,7 +74,6 @@
         </div>
 
         {% endif %}
-    </div>
-    
+    </div>   
 </body>
 </html>

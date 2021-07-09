@@ -14,87 +14,30 @@
     {% if not sucesso %}
 
     <div class="bloco">
-        <h2>Editar Registro</h2>
+        <h2>Editar Registro {{registro.nome}}</h2>
     </div>
     
     <div class="bloco"> 
         <form action="" method="POST">
             <div class="formulario">
-                <div class="item_form">
-                    <div>
-                        <label for="nome">Nome do piloto: </label>
-                    </div>
-                    <div>
-                        <input type="text" name="nome" id="nome" value="{{ registro.nome }}" />
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="vitorias">Número de vitórias do piloto: </label>
-                    </div>
-                    <div>
-                        <input type="text" name="vitorias" id="vitorias" value="{{ registro.vitorias }}"/>
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="poles">Número de pole-positions do piloto: </label>
-                    </div>
-                    <div>
-                        <input type="text" name="poles" id="poles" value="{{ registro.poles }}"/>
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="gp_disputados">Número de GPs disputados: </label>
-                    </div>
-                    <div>
-                        <input type="text" name="gp_disputados" id="gp_disputados" value="{{ registro.gp_disputados }}"/>
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="pontos">Número de pontos do piloto: </label>
-                    </div>
-                    <div>
-                        <input type="text" name="pontos" id="pontos" value="{{ registro.pontos }}"/>
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="podiums">Número de podiums do piloto: </label>
-                    </div>
-                    <div>
-                        <input type="text" name="podiums" id="podiums" value="{{ registro.podiums }}"/>
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="campeonatos">Número de Títulos do piloto: </label> 
-                    </div>
-                    <div>
-                        <input type="text" name="campeonatos" id="campeonatos"  value="{{ registro.campeonatos }}"/>
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="bio">Biografia: </label>
-                    </div>
-                    <div>
-                        <textarea name="bio" id="bio" cols="30" rows="10">{{registro.bio}}</textarea>
-                    </div>
-                </div>
-                <div class="item_form">
-                    <div>
-                        <label for="imagem_url">URL da imagem: </label> 
+                {% for i in labels %}
+                    {% for k,v in i.items() %}
+                    <div class="item_form">  
+                        <div>
+                            <label for="{{k}}">{{v}} </label>
+                        </div>
+                        <div>
+                            {% if k != 'bio' %}
+                            <input type="text" name="{{k}}" id="{{k}}" value="{{registro[k]}}"/>
+                            {% else %}
+                            <textarea name="{{k}}" id="{{k}}" cols="30" rows="10">{{registro[k]}}</textarea>
+                            {% endif %}
+                        </div>
                     </div> 
-                    <div>
-                        <input type="text" name="imagem_url" id="imagem_url" value="{{ registro.imagem_url }}"/>
-                    </div>  
-                </div>           
+                    {% endfor %}
+                {% endfor %}        
             </div> 
-            
-            <input type="submit" value="Enviar Dados" class="botao bloco" style="width: 170px;"/>           
+            <input type="submit" value="Enviar Dados" class="botao" style="width: 170px;"/>           
         </form>
     </div>
 
@@ -108,7 +51,6 @@
         <a href="/read/{{ registro.id }}" class="botao">Visualizar esse registro</a>
     </div>
 
-    {% endif %}
-      
+    {% endif %}     
 </body>
 </html>
